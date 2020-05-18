@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-    before_action :which_student, only: [:show, :edit]
+    before_action :which_student, only: [:show, :edit, :update]
 
     def index
         @students = Student.all
@@ -11,19 +11,19 @@ class StudentsController < ApplicationController
     end
 
     def create
-        @student = Student.create(student_params)
-        redirect_to student_path(@student)
+        student = Student.create(student_params)
+        redirect_to student_path(student)
     end
 
     def show
     end
 
     def edit
-
+        
     end
 
     def update
-        @student = Student.update(student_params)
+        @student.update(student_params)
         redirect_to student_path(@student)
     end
 
