@@ -1,0 +1,11 @@
+<h1>Student Page</h1>
+
+<span> First Name: </span> <%= @student.first_name %><br>
+<span> Last Name: </span> <%= @student.last_name %><br>
+
+
+
+<br>
+<br>
+<%= link_to "Edit This Student", edit_student_path(@student) %> <br>
+<%= link_to "Back To Index", students_path %>
