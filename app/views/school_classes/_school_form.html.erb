@@ -1,0 +1,17 @@
+<%=form_for(@school_class) do |f|%>
+<%=f.label :title%>
+<%=f.text_field :title%>
+<%=f.label :room_number%>
+<%=f.number_field :room_number%>
+<%=f.submit%>
+<%end%>
+
+<!--<%= form_tag new_student_path do %>
+  <label>Post title:</label><br>
+  <%= text_field_tag :'schools[title]' %><br>
+ 
+  <label>Post description:</label><br>
+  <%= text_area_tag :'schools[room_number]' %><br>
+ 
+  <%= submit_tag "Submit Post" %>
+<% end %>-->
