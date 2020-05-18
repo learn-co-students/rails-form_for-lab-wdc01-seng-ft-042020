@@ -76,3 +76,122 @@ Migrating to CreateSchoolClasses (20200518160808)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2020-05-18 12:46:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 68ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2020-05-18 12:46:21 -0400
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 610ms (Views: 602.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students/new" for ::1 at 2020-05-18 12:46:30 -0400
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_student_form.html.erb (0.9ms)
+  Rendered students/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/davis/Development/Flatiron/code/mod2/week2/labs/rails-form_for-lab-wdc01-seng-ft-042020/app/views/students/_student_form.html.erb:7: syntax error, unexpected end
+...eeze;@output_buffer.append=(end);@output_buffer.safe_append='
+...                            ^~~
+/Users/davis/Development/Flatiron/code/mod2/week2/labs/rails-form_for-lab-wdc01-seng-ft-042020/app/views/students/_student_form.html.erb:9: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/davis/Development/Flatiron/code/mod2/week2/labs/rails-form_for-lab-wdc01-seng-ft-042020/app/views/students/_student_form.html.erb:11: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/students/_student_form.html.erb:7: syntax error, unexpected end
+app/views/students/_student_form.html.erb:9: syntax error, unexpected ensure, expecting ')'
+app/views/students/_student_form.html.erb:11: syntax error, unexpected end, expecting ')'
+app/views/students/new.html.erb:1:in `_app_views_students_new_html_erb__468312202110393398_70178986524060'
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/davis/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.5ms)
+Started GET "/students/new" for ::1 at 2020-05-18 12:46:56 -0400
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_student_form.html.erb (181.4ms)
+  Rendered students/new.html.erb within layouts/application (183.0ms)
+Completed 200 OK in 280ms (Views: 277.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/students" for ::1 at 2020-05-18 12:47:08 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t2UuqLYk+Idpnb9S8M04/1uXXhWkwge7CBYz7pXC8RaoTJybvDr4u+3M+3hgg5Bv8qLIKAG+clbDng+ezUyUBQ==", "student"=>{"first_name"=>"John", "last_name"=>"Smith"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (21.6ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2020-05-18 16:47:08.883345"], ["updated_at", "2020-05-18 16:47:08.883345"]]
+  [1m[35m (58.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 88ms (ActiveRecord: 80.5ms)
+
+
+Started GET "/students/3" for ::1 at 2020-05-18 12:47:08 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students" for ::1 at 2020-05-18 12:47:16 -0400
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for ::1 at 2020-05-18 12:47:31 -0400
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students/new" for ::1 at 2020-05-18 12:50:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_student_form.html.erb (23.0ms)
+  Rendered students/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 494ms (Views: 448.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/students" for ::1 at 2020-05-18 12:51:05 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rTqvdgDjtmeEUKUejTLhIfdHJuy2f+pwOAdnZfUVwAmyEx1FCv22WwAB4TQdfEmxXnKw0RMDn53zj1sVrZulGg==", "student"=>{"first_name"=>"Jane", "last_name"=>"Doe"}, "commit"=>"Submit"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (19.7ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Doe"], ["created_at", "2020-05-18 16:51:05.665610"], ["updated_at", "2020-05-18 16:51:05.665610"]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/4
+Completed 302 Found in 72ms (ActiveRecord: 64.6ms)
+
+
+Started GET "/students/4" for ::1 at 2020-05-18 12:51:05 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+

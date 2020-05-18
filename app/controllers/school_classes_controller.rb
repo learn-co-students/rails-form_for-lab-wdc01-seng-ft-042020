@@ -1,5 +1,7 @@
 class SchoolClassesController < ApplicationController
 
+    before_action :which_school_class
+
     def new
     end
 
@@ -15,5 +17,9 @@ class SchoolClassesController < ApplicationController
     def update
     end
 
+    private
+    def which_school_class
+        @school_class = SchoolClass.find(params[:id])
+    end
 
 end
